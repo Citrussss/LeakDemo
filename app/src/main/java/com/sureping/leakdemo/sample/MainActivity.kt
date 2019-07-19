@@ -6,6 +6,8 @@ import com.sureping.leakdemo.R
 import com.sureping.leakdemo.base.BaseActivity
 import com.sureping.leakdemo.base.recyclerview.RecyclerInflate
 import com.sureping.leakdemo.base.recyclerview.RecyclerBaseAdapter
+import com.sureping.leakdemo.sample.exo.ExoPlayerActivity
+import com.sureping.leakdemo.sample.shadow.ShadowActivity
 import com.sureping.leakdemo.sample.非静态内部类的静态实例.SecondActivity
 import com.sureping.leakdemo.sample.非静态内部类的静态实例.SecondJavaActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -21,6 +23,8 @@ class MainActivity : BaseActivity() {
         val list = ArrayList<RecyclerInflate>()
         list.add(MainItemEntity("非静态内部类的静态实例:kotlin", SecondActivity::class.java))
         list.add(MainItemEntity("非静态内部类的静态实例:java", SecondJavaActivity::class.java))
+        list.add(MainItemEntity("阴影样式", ShadowActivity::class.java))
+        list.add(MainItemEntity("Exo播放器",ExoPlayerActivity::class.java))
         adapter.setData(list)
     }
 }

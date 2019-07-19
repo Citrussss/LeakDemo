@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.sureping.leakdemo">
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <application android:allowBackup="true"
                  android:label="@string/app_name"
                  android:name=".LeakApplication"
@@ -17,5 +19,7 @@
         </activity>
         <activity android:name=".sample.非静态内部类的静态实例.SecondActivity"/>
         <activity android:name=".sample.非静态内部类的静态实例.SecondJavaActivity"/>
+        <activity android:name=".sample.shadow.ShadowActivity"/>
+        <activity android:name=".sample.exo.ExoPlayerActivity"/>
     </application>
 </manifest>
