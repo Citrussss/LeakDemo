@@ -10,7 +10,6 @@ import com.sureping.leakdemo.base.BaseActivity;
 public class SecondJavaActivity extends BaseActivity {
     private static Object inner;
     private Button button;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

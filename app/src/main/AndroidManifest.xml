@@ -1,8 +1,8 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
           package="com.sureping.leakdemo">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application android:allowBackup="true"
                  android:label="@string/app_name"
                  android:name=".LeakApplication"
@@ -10,16 +10,20 @@
                  android:roundIcon="@mipmap/ic_launcher_round"
                  android:supportsRtl="true"
                  android:theme="@style/AppTheme">
-        <activity android:name=".sample.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".sample.非静态内部类的静态实例.SecondActivity"/>
-        <activity android:name=".sample.非静态内部类的静态实例.SecondJavaActivity"/>
-        <activity android:name=".sample.shadow.ShadowActivity"/>
-        <activity android:name=".sample.exo.ExoPlayerActivity"/>
-    </application>
-</manifest>
+    <activity android:name=".sample.MainActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW"/>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
+    </activity>
+    <activity android:name=".sample.非静态内部类的静态实例.SecondActivity"/>
+    <activity android:name=".sample.非静态内部类的静态实例.SecondJavaActivity"/>
+    <activity android:name=".sample.shadow.ShadowActivity"/>
+    <activity android:name=".sample.exo.ExoPlayerActivity"/>
+    <activity android:name=".sample.exo_rc.ExoRcActivity"/>
+<!--
+    <activity android:name=".sample.gys.GsyActivity"/>
+-->
+</application>
+        </manifest>
