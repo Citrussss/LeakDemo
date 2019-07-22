@@ -1,6 +1,6 @@
 package com.sureping.leakdemo.sample.exo_rc
 
-import android.databinding.ViewDataBinding
+import androidx.databinding.ViewDataBinding
 import android.net.Uri
 import android.view.View
 import android.view.ViewGroup

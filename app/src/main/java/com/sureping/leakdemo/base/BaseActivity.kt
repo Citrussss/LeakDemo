@@ -1,6 +1,6 @@
 package com.sureping.leakdemo.base
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.sureping.leakdemo.LeakApplication
 
 abstract class BaseActivity:AppCompatActivity() {

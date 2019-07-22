@@ -1,8 +1,8 @@
 package com.sureping.leakdemo.sample.exo_rc
 
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import com.sureping.leakdemo.R
 import com.sureping.leakdemo.base.BaseActivity
@@ -23,7 +23,7 @@ class ExoRcActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exo_rc)
         recycler_view.adapter = adapter
-        recycler_view.layoutManager = LinearLayoutManager(this)
+        recycler_view.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         val list = ArrayList<ExoEntity>()
         list.add(ExoEntity())
         list.add(ExoEntity())
@@ -31,10 +31,10 @@ class ExoRcActivity : BaseActivity() {
         list.add(ExoEntity())
         adapter.setData(list)
 
-        recycler_view.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                val manager = recyclerView.layoutManager as LinearLayoutManager?
-                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+        recycler_view.addOnScrollListener(object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: androidx.recyclerview.widget.RecyclerView, newState: Int) {
+                val manager = recyclerView.layoutManager as androidx.recyclerview.widget.LinearLayoutManager?
+                if (newState == androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE) {
                     val firstVisibleItem = manager?.findFirstVisibleItemPosition() ?: -1
                     if (firstVisibleItem != -1 && currentPosition != firstVisibleItem) {
                         val view = manager?.findViewByPosition(firstVisibleItem)
@@ -47,7 +47,7 @@ class ExoRcActivity : BaseActivity() {
                 }
             }
 
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {}
+            override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {}
         })
     }
 }

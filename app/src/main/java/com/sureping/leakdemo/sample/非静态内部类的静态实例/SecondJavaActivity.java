@@ -1,7 +1,7 @@
 package com.sureping.leakdemo.sample.非静态内部类的静态实例;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 import com.sureping.leakdemo.R;

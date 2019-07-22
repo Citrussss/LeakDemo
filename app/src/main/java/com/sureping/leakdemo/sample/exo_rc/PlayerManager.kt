@@ -2,7 +2,7 @@ package com.sureping.leakdemo.sample.exo_rc
 
 import android.content.Context
 import android.net.Uri
-import android.support.v7.app.AppCompatViewInflater
+import androidx.appcompat.app.AppCompatViewInflater
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

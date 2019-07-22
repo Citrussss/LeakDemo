@@ -22,8 +22,9 @@
     <activity android:name=".sample.shadow.ShadowActivity"/>
     <activity android:name=".sample.exo.ExoPlayerActivity"/>
     <activity android:name=".sample.exo_rc.ExoRcActivity"/>
-<!--
-    <activity android:name=".sample.gys.GsyActivity"/>
--->
+        <activity android:name=".sample.workmanager.NetWorkManagerActivity"/>
+        <!--
+            <activity android:name=".sample.gys.GsyActivity"/>
+        -->
 </application>
         </manifest>

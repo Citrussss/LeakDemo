@@ -2,8 +2,8 @@ package com.sureping.leakdemo.sample
 
 import android.app.Activity
 import android.content.Intent
-import android.databinding.ViewDataBinding
-import android.support.v4.content.ContextCompat.startActivity
+import androidx.databinding.ViewDataBinding
+import androidx.core.content.ContextCompat.startActivity
 import android.view.View
 import com.sureping.leakdemo.R
 import com.sureping.leakdemo.base.BaseActivity
