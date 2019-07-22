@@ -10,7 +10,7 @@ import com.sureping.leakdemo.databinding.HolderExoBinding
  * version 1.0
  * effect :
  */
-class ExoEntity : RecyclerInflate<HolderExoBinding>() {
+class ExoEntity() : RecyclerInflate<HolderExoBinding>() {
     override fun getLayoutId(): Int {
        return R.layout.holder_exo
     }

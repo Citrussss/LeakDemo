@@ -4,6 +4,7 @@ import android.databinding.ViewDataBinding
 import android.net.Uri
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import com.google.android.exoplayer2.DefaultLoadControl
 import com.google.android.exoplayer2.DefaultRenderersFactory
@@ -18,6 +19,14 @@ import com.sureping.leakdemo.R
 import com.sureping.leakdemo.base.recyclerview.RecyclerBaseAdapter
 import com.sureping.leakdemo.base.recyclerview.RecyclerBaseHolder
 import kotlinx.android.synthetic.main.activity_exo.*
+import android.media.MediaMetadataRetriever
+import android.provider.Contacts
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
+import wseemann.media.FFmpegMediaMetadataRetriever
+import kotlin.coroutines.experimental.migration.toExperimentalCoroutineContext
+
 
 /**
  * author pisa
@@ -29,6 +38,27 @@ class ExoAdapter : RecyclerBaseAdapter<ExoEntity>() {
 
     override fun onBindViewHolder(holder: RecyclerBaseHolder<out ViewDataBinding>, position: Int) {
         super.onBindViewHolder(holder, position)
+        val entity = getData()[position]
+
+        entity.dataBinding?.root?.let {
+            it.findViewById<ImageView>(R.id.iv_video_pre)
+                .let {
+                    val url = if (position % 2 == 0) {
+                        it.context.getString(R.string.media_url_mp4)
+                    } else {
+                        it.context.getString(R.string.media_url_mp4_2)
+                    }
+                    val launch = GlobalScope.launch {
+                        val result = async {
+                            val retriever = FFmpegMediaMetadataRetriever()
+                            retriever.setDataSource(url, HashMap())
+                            retriever.frameAtTime
+                        }
+                        val bitmap = result.await()
+                        it.post { it.setImageBitmap(bitmap)}
+                    }
+                }
+        }
 //        val entity = getData()[position]
 //        entity.dataBinding?.root?.let {
 //            PlayerManager.INSTANCE.init(it.context)
