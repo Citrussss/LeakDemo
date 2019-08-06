@@ -30,5 +30,6 @@ class AopMainActivity : BaseActivity() ,ILogin{
             }
         ) as ILogin
         proxy.isLogin()
+        //分支冲突
     }
 }
