@@ -30,5 +30,7 @@ class AopMainActivity : BaseActivity() ,ILogin{
             }
         ) as ILogin
         proxy.isLogin()
+
+
     }
 }
